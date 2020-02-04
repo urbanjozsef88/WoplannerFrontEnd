@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WorkoutService } from './service/workout.service';
-import {Router} from '@angular/router';
+import {Router, ActivatedRoute, Params} from '@angular/router';
 
 
 @Component({
@@ -10,18 +10,23 @@ import {Router} from '@angular/router';
 })
 export class WorkoutComponent implements OnInit {
 
-  userId: number = 1;
+  /* userId: number = 1; */
   listObj: any;
 
 
-  constructor(private workoutservice: WorkoutService, private router: Router) { }
+  constructor(private workoutservice: WorkoutService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.workoutservice.getAll(this.userId).subscribe(
+    this.route.params.subscribe(
+      (params: Params) => {
+        this.workoutservice.getAll(params.userid).subscribe((data) => { this.listObj = data});
+      }
+    )
+    /* this.workoutservice.getAll(this.userId).subscribe(
       (data) => {this.listObj = data;
       console.log(this.listObj);
     }
-    )
+    ) */
 
   }
 

@@ -22,11 +22,9 @@ export class WorkoutHistoryComponent implements OnInit {
 
   clearhistory(){
     if(confirm('Your workout history will be deleted. Continue?')){
-      console.log('fuck')
-    }
-
+      this.workoutHistoryService.delete(this.userid).subscribe((data: any) => {
+        alert('Workouthistory is cleared!');
+    })
   }
-
   }
-
-
+}

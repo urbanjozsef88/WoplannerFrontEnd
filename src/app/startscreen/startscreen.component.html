@@ -1,1 +1,32 @@
-<p>startscreen works!</p>
+<div>
+  <h1 class="text-center mb-5 pt-3">Welcome to Workout Planner</h1>
+
+
+<div class="container login-container">
+  <div class="row">
+      <div class="col-md-6 login-form-1">
+          <h3 class="pt-5">Login to your account</h3>
+          <form #loginform="ngForm" (ngSubmit)="login()">
+              <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Your Email *" name="email" [(ngModel)]="userDTO.email"/>
+              </div>
+              <div class="form-group">
+                  <input type="password" class="form-control" placeholder="Your Password *" name="password" [(ngModel)]="userDTO.password"/>
+              </div>
+              <div class="form-group">
+                  <input type="submit" class="btnSubmit btn btn-primary" />
+                  <button Class="ml-3 btn btn-success">Create new account</button>
+              </div>
+              <div class="form-group">
+                  <a href="#" class="ForgetPwd">Forget Password?</a>
+              </div>
+          </form>
+          <h5 class="mt-2">Don't have an account yet? <a routerLink="registration">Sign Up</a></h5>
+      </div>
+  </div>
+</div>
+
+
+
+
+</div>

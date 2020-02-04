@@ -1,6 +1,7 @@
-
+<body style="background-image: url('assets/SiteBackground.jpg')">
 <div>
-<h1>{{workout.name}}</h1>
+<h1 class="text-center pt-3 mb-5">{{workout.name}}</h1>
+<p></p>
 
 
 
@@ -18,11 +19,14 @@
     <tr *ngFor="let element of workout.exercises; let i = index">
       <th>{{element.name}}</th>
       <th>{{element.sets}} X {{element.reps}} X {{element.weight}} {{element.type}}</th>
-      <th><input type="checkbox" class="btn-success" (click)="checkbox(i)"></th>
+      <th>
+      <input type="checkbox" class="btn btn-success" (click)="checkbox(i)">
+     </th>
     </tr>
   </tbody>
 </table>
 </form>
 </div>
-<button type="submit" [disabled]="!ready" (click)="sentToHistory()">Completed</button>
+<button type="submit" [disabled]="!ready" class="btn btn-success" (click)="sentToHistory()">Completed</button>
 </div>
+</body>

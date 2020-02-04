@@ -19,6 +19,10 @@ export class WorkoutHistoryService {
     return this.httpClient.post(`http://localhost:8080/api/workouthistory/currentuser/${userid}/workout/${workoutid}`, null)
   }
 
+  delete(userid: number){
+    return this.httpClient.delete(`http://localhost:8080/api/workouthistory/currentuser/${userid}`);
+  }
+
 
 
 }

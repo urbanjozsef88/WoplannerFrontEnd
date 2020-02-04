@@ -13,7 +13,9 @@ import { UserComponent } from './user/user.component';
 import { WorkoutHistoryComponent } from './workout-history/workout-history.component';
 import { CreateWorkoutComponent } from './create-workout/create-workout.component';
 import { FormsModule } from '@angular/forms';
-import { WorkoutContentComponent } from './workout-content/workout-content.component'
+import { WorkoutContentComponent } from './workout-content/workout-content.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { LoginComponent } from './login/login.component'
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { WorkoutContentComponent } from './workout-content/workout-content.compo
     UserComponent,
     WorkoutHistoryComponent,
     CreateWorkoutComponent,
-    WorkoutContentComponent
+    WorkoutContentComponent,
+    RegistrationComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
