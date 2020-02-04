@@ -1,0 +1,28 @@
+
+<div>
+<h1>{{workout.name}}</h1>
+
+
+
+<div>
+  <form>
+<table class="table w-75">
+  <thead class="table table-dark">
+    <tr>
+      <th>Exercise</th>
+      <th>Sets X Reps X Weight</th>
+      <th>Done</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let element of workout.exercises; let i = index">
+      <th>{{element.name}}</th>
+      <th>{{element.sets}} X {{element.reps}} X {{element.weight}} {{element.type}}</th>
+      <th><input type="checkbox" class="btn-success" (click)="checkbox(i)"></th>
+    </tr>
+  </tbody>
+</table>
+</form>
+</div>
+<button type="submit" [disabled]="!ready" (click)="sentToHistory()">Completed</button>
+</div>

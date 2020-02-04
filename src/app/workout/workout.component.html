@@ -1,0 +1,36 @@
+
+<body>
+<p></p>
+<h1 class="text-center">Your Workout Plans</h1>
+<div class=text-center>
+<table class="table w-75 ">
+  <thead class="table table-dark">
+    <tr>
+      <th>Action</th>
+      <th>#</th>
+      <th>Name</th>
+      <th>Created</th>
+      <th>Sets</th>
+      <th>Reps</th>
+      <th>Total Weight</th>
+      <th>Remove</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let element of listObj; let i = index">
+      <th><button type="button" class="btn btn-primary" routerLink="./{{element.id}}">Select</button></th>
+      <th>{{i+1}}</th> <!--element.id-->
+      <th>{{element.name}}</th>
+      <th>{{element.createdAt}}</th>
+      <th>{{element.totalSets}}</th>
+      <th>{{element.totalReps}}</th>
+      <th>{{element.totalWeightMoved}}</th>
+      <th><button type="button" class="btn btn-danger" (click)="deleteWorkout(element.id)">Delete</button></th>
+    </tr>
+  </tbody>
+</table>
+</div >
+<div class="text-center">
+  <button class="btn btn-success" routerLink="/createworkout">Create new workout</button>
+</div>
+</body>
