@@ -13,7 +13,7 @@ export class WorkoutContentComponent implements OnInit {
 
   constructor(private workoutService: WorkoutService, private workoutHistoryService: WorkoutHistoryService, private router: Router, private route: ActivatedRoute) { }
 
-  userid: number = 1;
+  //userid: number = 1;
   workout: any = {};
   checkboxes: number[] = [];
   ready: boolean;

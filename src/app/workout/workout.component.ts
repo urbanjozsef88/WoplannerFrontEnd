@@ -11,7 +11,7 @@ import { UserstateService } from '../userstate.service';
 })
 export class WorkoutComponent implements OnInit {
 
-  userId: number = 1;
+  //userId: number = 1;
   listObj: any;
 
 

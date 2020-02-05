@@ -14,8 +14,9 @@ export class WorkoutService {
 
   constructor(private httpClient: HttpClient, private userState: UserstateService) { }
 
+//By workoutid
 get(id: number){
-  return this.httpClient.get(`http://localhost:8080/api/workout/${this.userState.getUser()}`);
+  return this.httpClient.get(`http://localhost:8080/api/workout/${id}`);
 }
 
 getAll(id: number){

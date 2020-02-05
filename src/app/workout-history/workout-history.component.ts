@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WorkoutHistoryService } from './service/workout-history.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-workout-history',
@@ -10,7 +11,7 @@ export class WorkoutHistoryComponent implements OnInit {
 
   listObj: any;
 
-  constructor(private workoutHistoryService: WorkoutHistoryService) { }
+  constructor(private workoutHistoryService: WorkoutHistoryService, private router: Router) { }
 
   ngOnInit() {
     this.workoutHistoryService.getAll().subscribe(
@@ -23,6 +24,8 @@ export class WorkoutHistoryComponent implements OnInit {
       this.workoutHistoryService.delete().subscribe((data: any) => {
         alert('Workouthistory is cleared!');
     })
+    this.workoutHistoryService.getAll().subscribe(
+    (data) => {this.listObj = data})
   }
   }
 }

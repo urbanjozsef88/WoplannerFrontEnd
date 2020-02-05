@@ -34,6 +34,14 @@
       id="password" 
       class="form-control" [(ngModel)]="newUser.password" name="password" required>
   </div>
+  <div class="form-group">
+    <label for="passwordagain" class="font-weight-bold">Password Again</label>
+    <input 
+      type="password"
+      id="passwordagian" 
+      class="form-control" name="passwordagain" [(ngModel)]="passwordagain" required>
+  </div>
+  
 
 
   <button class="btn btn-success" type="submit" [disabled]="!register.valid" >Submit</button>

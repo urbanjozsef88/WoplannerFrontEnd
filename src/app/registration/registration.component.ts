@@ -23,6 +23,9 @@ export class RegistrationComponent implements OnInit {
     password: '',
   }
 
+  passwordagain: string;
+
+
 
   ngOnInit() {
   }

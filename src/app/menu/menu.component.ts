@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserstateService } from '../userstate.service';
 
 @Component({
   selector: 'app-menu',
@@ -8,13 +9,18 @@ import { Router } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private userStatus: UserstateService) { }
+
+  userIn = false;
 
   ngOnInit() {
+    if(this.userStatus.getUser() >= 1){
+      this.userIn = true;
+    }
   }
 
-  public navigate(url: string) {
-    this.router.navigate([url]); //{queryParams: {kiskutya: 'hellóka'}}
+  logOut(){
+    this.userStatus.setUser(0);
   }
 
 }

@@ -22,18 +22,20 @@ export class StartscreenComponent implements OnInit {
 
   CurrentUser: any;
 
-
+  handleError(error: any){
+    if(error.status === 401){alert('Wrong password')};
+    if(error.status === 404){alert('Wrong email address')}
+  }
 
   login(){
     this.userService.loginUser(this.userDTO).subscribe((data) =>{
       this.CurrentUser = data;
-      console.log(this.userDTO);
-    console.log(this.CurrentUser);
     this.userState.setUser(this.CurrentUser.id);
-    this.router.navigateByUrl(`workouts/currentuser/${this.CurrentUser.id}`)
+    this.router.navigateByUrl(`workouts`)
     this.userDTO.email='';
     this.userDTO.password='';
-    });
+    },
+    (error) => this.handleError(error));
     
   }
 
