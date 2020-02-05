@@ -23,18 +23,29 @@ export class RegistrationComponent implements OnInit {
     password: '',
   }
 
+  passwordagain: string = '';
+
+  passwordCheck(){
+    if(this.passwordagain === this.newUser.password){
+      return true;
+    } else { return false;}
+  }
+
+
 
   ngOnInit() {
   }
 
 
   createNew(){
+    if(this.passwordCheck()){
     let newuser = new User(this.newUser.email, this.newUser.email, this.newUser.firstName, this.newUser.lastName, this.newUser.password);
     this.userService.postUser(newuser).subscribe(() =>{
       alert('Registration was successful!');
       this.router.navigateByUrl("");
     },
-    err => alert('There was an error, please try it again!'))
+    err => alert('There was an error, please try it again!'))}
+    else{alert('Passwords are not matching')}
     
 
   }

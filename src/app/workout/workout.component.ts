@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WorkoutService } from './service/workout.service';
 import {Router, ActivatedRoute, Params} from '@angular/router';
+import { UserstateService } from '../userstate.service';
 
 
 @Component({
@@ -10,30 +11,25 @@ import {Router, ActivatedRoute, Params} from '@angular/router';
 })
 export class WorkoutComponent implements OnInit {
 
-  /* userId: number = 1; */
+  //userId: number = 1;
   listObj: any;
 
 
-  constructor(private workoutservice: WorkoutService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private workoutservice: WorkoutService, private router: Router, private route: ActivatedRoute, private userState: UserstateService) { }
 
   ngOnInit() {
-    this.route.params.subscribe(
-      (params: Params) => {
-        this.workoutservice.getAll(params.userid).subscribe((data) => { this.listObj = data});
-      }
-    )
+    this.workoutservice.getAll(this.userState.getUser()).subscribe((data) => { this.listObj = data});
     /* this.workoutservice.getAll(this.userId).subscribe(
       (data) => {this.listObj = data;
       console.log(this.listObj);
     }
     ) */
-
   }
 
   deleteWorkout(id: number){
     this.workoutservice.deleteWorkout(id).subscribe((data: any) => {
       alert('Workout is deleted!');
-      this.workoutservice.getAll(this.userId).subscribe(
+      this.workoutservice.getAll(this.userState.getUser()).subscribe(
         (data) => {this.listObj = data;
         console.log(this.listObj);
       }

@@ -13,7 +13,7 @@ const routes: Routes = [
   {path: '', component: StartscreenComponent },
   {path: 'registration', component: RegistrationComponent },
   {path: 'user', component: UserComponent },
-  {path: 'workouts/currentuser/:userid', component: WorkoutComponent},
+  {path: 'workouts', component: WorkoutComponent},
   {path: 'workouts/:workoutid', component: WorkoutContentComponent},
   {path: 'createworkout', component: CreateWorkoutComponent},
   {path: 'workouthistory', component: WorkoutHistoryComponent}

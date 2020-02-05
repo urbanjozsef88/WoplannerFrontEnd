@@ -1,26 +1,27 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { UserstateService } from 'src/app/userstate.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WorkoutHistoryService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private userState: UserstateService) { }
 
-  userid: number = 1
+  //userid: number = 1
 
 
-  getAll(userid: number){
-    return this.httpClient.get(`http://localhost:8080/api/workouthistory/currentuser/${userid}`);
+  getAll(){
+    return this.httpClient.get(`http://localhost:8080/api/workouthistory/currentuser/${this.userState.getUser()}`);
   }
 
-  post(userid: number, workoutid:number){
-    return this.httpClient.post(`http://localhost:8080/api/workouthistory/currentuser/${userid}/workout/${workoutid}`, null)
+  post( workoutid:number){
+    return this.httpClient.post(`http://localhost:8080/api/workouthistory/currentuser/${this.userState.getUser()}/workout/${workoutid}`, null)
   }
 
-  delete(userid: number){
-    return this.httpClient.delete(`http://localhost:8080/api/workouthistory/currentuser/${userid}`);
+  delete(){
+    return this.httpClient.delete(`http://localhost:8080/api/workouthistory/currentuser/${this.userState.getUser()}`);
   }
 
 

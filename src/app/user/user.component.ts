@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from './service/user.service';
+import { UserstateService } from '../userstate.service';
 
 @Component({
   selector: 'app-user',
@@ -10,11 +11,10 @@ export class UserComponent implements OnInit {
 
   constructor(private userService: UserService) { }
 
-  userid: number = 1;
   userObj: any;
 
   ngOnInit() {
-    this.userService.getUser(this.userid).subscribe(
+    this.userService.getUser().subscribe(
       (data) => { this.userObj = data;}
     )
   }

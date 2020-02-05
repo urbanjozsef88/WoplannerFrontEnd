@@ -32,8 +32,16 @@
     <input 
       type="password"
       id="password" 
-      class="form-control" [(ngModel)]="newUser.password" name="password" required>
+      class="form-control" [(ngModel)]="newUser.password" minlength="3" name="password" required>
   </div>
+  <div class="form-group">
+    <label for="passwordagain" class="font-weight-bold">Confirm Password</label>
+    <input 
+      type="password"
+      id="passwordagian" 
+      class="form-control" name="passwordagain" minlength="3" [(ngModel)]="passwordagain" required>
+  </div>
+  
 
 
   <button class="btn btn-success" type="submit" [disabled]="!register.valid" >Submit</button>

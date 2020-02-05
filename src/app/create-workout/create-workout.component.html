@@ -7,7 +7,7 @@
   <h4 class="mt-3 mb-4 ml-3">Workout name: <input type="text" [(ngModel)]="newWorkout.name" maxlength="25"></h4>
   
 
-  <table class="table ml-1 w-75">
+  <table class="table ml-1 w-75 table-light">
     <thead class="table table-dark">
       <tr>
         <th>#</th>
@@ -19,7 +19,7 @@
         <th>Remove</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody >
       <tr *ngFor="let element of newWorkout.exercises; let index= index">
         <th>{{index+1}}</th> <!--element.id-->
         <th>{{element.name}}</th>
