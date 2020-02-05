@@ -10,7 +10,7 @@ import {Router, ActivatedRoute, Params} from '@angular/router';
 })
 export class WorkoutComponent implements OnInit {
 
-  /* userId: number = 1; */
+  userId: number = 1;
   listObj: any;
 
 

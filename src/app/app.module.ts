@@ -15,7 +15,6 @@ import { CreateWorkoutComponent } from './create-workout/create-workout.componen
 import { FormsModule } from '@angular/forms';
 import { WorkoutContentComponent } from './workout-content/workout-content.component';
 import { RegistrationComponent } from './registration/registration.component';
-import { LoginComponent } from './login/login.component'
 
 
 @NgModule({
@@ -30,7 +29,6 @@ import { LoginComponent } from './login/login.component'
     CreateWorkoutComponent,
     WorkoutContentComponent,
     RegistrationComponent,
-    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -14,11 +14,11 @@ export class WorkoutService {
   constructor(private httpClient: HttpClient) { }
 
 get(id: number){
-  return this.httpClient.get(`http://localhost:8080/api/workout/${id}`);
+  return this.httpClient.get(`http://localhost:8080/api/workout/${this.id}`);
 }
 
 getAll(id: number){
-  return this.httpClient.get(`http://localhost:8080/api/workout/currentuser/${id}`);
+  return this.httpClient.get(`http://localhost:8080/api/workout/currentuser/${this.id}`);
 }
 
 addWorkout(workout: Workout){
