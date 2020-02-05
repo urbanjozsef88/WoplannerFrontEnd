@@ -44,7 +44,7 @@ export class WorkoutContentComponent implements OnInit {
   }
 
   sentToHistory(){
-    this.workoutHistoryService.post(this.userid, this.workout.id).subscribe(
+    this.workoutHistoryService.post(this.workout.id).subscribe(
       () =>{alert('Well done!')}
 
     )

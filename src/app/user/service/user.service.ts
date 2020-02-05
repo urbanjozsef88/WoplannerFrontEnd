@@ -13,8 +13,8 @@ export class UserService {
   constructor(private httpClient: HttpClient, private userState: UserstateService) { }
 
 
-  getUser(id: number){
-    return this.httpClient.get(`http://localhost:8080/api/user/${this.userState.getUser}`);
+  getUser(){
+    return this.httpClient.get(`http://localhost:8080/api/user/${this.userState.getUser()}`);
   }
 
   loginUser(userDTO: any){

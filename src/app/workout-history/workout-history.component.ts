@@ -8,21 +8,19 @@ import { WorkoutHistoryService } from './service/workout-history.service';
 })
 export class WorkoutHistoryComponent implements OnInit {
 
-
-  userid: number = 1;
   listObj: any;
 
   constructor(private workoutHistoryService: WorkoutHistoryService) { }
 
   ngOnInit() {
-    this.workoutHistoryService.getAll(this.userid).subscribe(
+    this.workoutHistoryService.getAll().subscribe(
       (data) => {this.listObj = data})
   }
 
 
   clearhistory(){
     if(confirm('Your workout history will be deleted. Continue?')){
-      this.workoutHistoryService.delete(this.userid).subscribe((data: any) => {
+      this.workoutHistoryService.delete().subscribe((data: any) => {
         alert('Workouthistory is cleared!');
     })
   }
