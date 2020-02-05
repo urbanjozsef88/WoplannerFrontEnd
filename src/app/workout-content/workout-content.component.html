@@ -1,13 +1,14 @@
 <body style="background-image: url('assets/SiteBackground.jpg')">
 <div>
-<h1 class="offset-3 pt-3 mb-5 pl-4">{{workout.name}}</h1>
+<h1 class="text-center w-75 pt-3">{{workout.name}}</h1>
 <p></p>
 
 
 
 <div>
-  <div class="offset-0 col-md-10">
+  <div >
     <div class="container">
+      <div class="text-center">
   <form>
 <table class="table w-75 table-light">
   <thead class="table table-dark">
@@ -28,10 +29,13 @@
   </tbody>
 </table>
 </form>
-<button type="submit" [disabled]="!ready" class="btn btn-success offset-4" (click)="sentToHistory()">Completed</button>
-</div>
+<button type="submit" [disabled]="!ready" class="btn btn-success offset-5 mr-3" (click)="sentToHistory()">Completed</button>
 </div>
 </div>
 
+
+<button class="btn btn-secondary offset-1" routerLink="/workouts">Back</button>
+</div>
+</div>
 </div>
 </body>

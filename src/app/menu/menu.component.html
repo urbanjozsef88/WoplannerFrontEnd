@@ -2,12 +2,11 @@
 <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
   <a class="navbar-brand"> Workout Planner: </a>
   <div class="d-flex justify-content-between w-100">
-<ul class="nav navbar-nav navbar-left" *ngIf="!userIn">
-      <a class="nav-item nav-link active" routerLink="workouts">Your Workouts <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link active" routerLink="workouthistory">Workout History</a>
-      <a class="nav-item nav-link active" routerLink="user">Your Profile</a>
-</ul>
-    
+<div class="nav navbar-nav navbar-left">
+      <button class="btn btn-dark" (click)="workoutNavigate()" >Your Workouts</button>
+      <button class="btn btn-dark" (click)="workoutHistoryNavigate()">Workout History</button>
+      <button class="btn btn-dark" (click)="userNavigate()">Your Profile</button>
+</div>
  
   <ul class="nav navbar-nav navbar-right d-flex align-items-center">
     <li class="mr-3"><a routerLink="registration">Registration </a></li>

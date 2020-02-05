@@ -3,12 +3,19 @@
 
 
 <div class="container">
-  <div>
-    <h4 class="pb-2">First Name: {{userObj.firstName}}</h4>
-    <h4 class="pb-2">Last Name: {{userObj.lastName}}</h4>
-    <h4 class="pb-2">E-mail: {{userObj.email}}</h4>
-    <h4 class="pb-2">Number of workout plans: {{userObj.numberOfWorkouts}}</h4>
-    <h4 class="pb-2">Number of completed workouts: {{userObj.numberOfCompletedWorkouts}}</h4>
+    <div class="row">
+      <div class="col">
+        <ul>
+          <li><h4 class="pb-2">First name: {{userObj.firstName}}</h4></li>
+          <li><h4 class="pb-2">Last name: {{userObj.lastName}}</h4></li>
+          <li><h4 class="pb-2">E-mail: {{userObj.email}}</h4></li>
+          <li><h4 class="pb-2">Number of workout plans: {{userObj.numberOfWorkouts}}</h4></li>
+          <li><h4 class="pb-2">Number of completed workouts: {{userObj.numberOfCompletedWorkouts}}</h4></li>
+          <button class="btn btn-primary mt-2 mb-2">Edit profile</button><br>
+          <button class="btn btn-primary mb-2">Change password</button><br>
+          <button class="btn btn-danger mt-2">Delete Account</button>
+        </ul>
+      </div>
+    </div>
   </div>
-</div>
 </div>

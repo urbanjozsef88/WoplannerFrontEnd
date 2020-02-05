@@ -11,16 +11,40 @@ export class MenuComponent implements OnInit {
 
   constructor(private router: Router, private userStatus: UserstateService) { }
 
-  userIn = false;
+  
 
   ngOnInit() {
-    if(this.userStatus.getUser() >= 1){
-      this.userIn = true;
-    }
+
   }
 
   logOut(){
     this.userStatus.setUser(0);
   }
+
+
+  workoutNavigate(){
+    if(this.userStatus.loggedIn){
+      this.router.navigateByUrl('workouts')
+    } else{
+      alert('Please LogIn!')
+    }
+  }
+
+  workoutHistoryNavigate(){
+    if(this.userStatus.loggedIn){
+      this.router.navigateByUrl('workouthistory')
+    } else{
+      alert('Please LogIn!')
+    }
+  }
+
+  userNavigate(){
+    if(this.userStatus.loggedIn){
+      this.router.navigateByUrl('user')
+    } else{
+      alert('Please LogIn!')
+    }
+  }
+
 
 }
