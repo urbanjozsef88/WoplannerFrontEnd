@@ -50,10 +50,9 @@ export class CreateWorkoutComponent implements OnInit {
     console.log(workout);
     
     this.workoutService.addWorkout(workout).subscribe((data: any) => {
-      alert('Sikeres feltöltés!');
       this.router.navigateByUrl('/workouts');
     },
-    err => alert('Hiba történt a feltöltés során!')
+    err => alert('Error! Please try it again!')
   );
 };
     

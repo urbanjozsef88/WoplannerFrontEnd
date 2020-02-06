@@ -10,7 +10,7 @@
     <div class="container">
       <div class="text-center">
   <form>
-<table class="table w-75 table-light">
+<table class="table w-75">
   <thead class="table table-dark">
     <tr>
       <th>Exercise</th>
@@ -18,7 +18,7 @@
       <th>Done</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="table-secondary">
     <tr *ngFor="let element of workout.exercises; let i = index">
       <th>{{element.name}}</th>
       <th>{{element.sets}} X {{element.reps}} X {{element.weight}} {{element.type}}</th>

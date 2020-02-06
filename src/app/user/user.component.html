@@ -1,21 +1,46 @@
 <div>
 <h1 class="text-center pt-3 mb-5">Your Profile</h1>
 
+<div>
+  <div>
+    <div class="container">
+      <div>
+  <form>
+<table class="table w-75 table-bordered">
+  <thead class="table table-dark">
+    <tr>
+      <th>
+        Profile
+      </th>
+      <th>
+        Your details
+      </th>
+    </tr>
+  </thead>
+  <tbody class="table-secondary">
+    <tr>
+      <th style="width: 50%">First name: </th>
+      <th> {{userObj.firstName}}</th>     
+    </tr>
+    <tr>
+      <th style="width: 50%">Last name:</th>
+      <th>{{userObj.lastName}}</th>
+    </tr>
+    <tr>
+       <th style="width: 50%">E-mail: </th>
+       <th> {{userObj.email}} </th>
+    </tr>
+    <tr>
+      <th style="width: 50%">Number of workout plans:</th>
+      <th>{{userObj.numberOfWorkouts}}</th>
+    </tr>
+    <tr>
+      <th style="width: 50%">Number of completed workouts:</th>
+      <th>{{userObj.numberOfCompletedWorkouts}}</th>
+    </tr>
+  </tbody>
 
-<div class="container">
-    <div class="row">
-      <div class="col">
-        <ul>
-          <li><h4 class="pb-2">First name: {{userObj.firstName}}</h4></li>
-          <li><h4 class="pb-2">Last name: {{userObj.lastName}}</h4></li>
-          <li><h4 class="pb-2">E-mail: {{userObj.email}}</h4></li>
-          <li><h4 class="pb-2">Number of workout plans: {{userObj.numberOfWorkouts}}</h4></li>
-          <li><h4 class="pb-2">Number of completed workouts: {{userObj.numberOfCompletedWorkouts}}</h4></li>
-          <button class="btn btn-primary mt-2 mb-2">Edit profile</button><br>
-          <button class="btn btn-primary mb-2">Change password</button><br>
-          <button class="btn btn-danger mt-2">Delete Account</button>
-        </ul>
-      </div>
-    </div>
-  </div>
+</table>
+</form>
+</div>
 </div>

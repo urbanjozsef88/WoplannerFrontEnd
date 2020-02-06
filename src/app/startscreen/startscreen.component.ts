@@ -39,4 +39,8 @@ export class StartscreenComponent implements OnInit {
     
   }
 
+  forgottenPassword(){
+    alert('Try "12345" or "password". I hope it helps!')
+  }
+
 }

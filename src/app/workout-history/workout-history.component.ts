@@ -23,6 +23,7 @@ export class WorkoutHistoryComponent implements OnInit {
     if(confirm('Your workout history will be deleted. Continue?')){
       this.workoutHistoryService.delete().subscribe((data: any) => {
         alert('Workouthistory is cleared!');
+        
     })
     this.workoutHistoryService.getAll().subscribe(
     (data) => {this.listObj = data})
