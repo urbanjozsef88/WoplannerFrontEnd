@@ -12,9 +12,9 @@
     </thead>
     <tbody class="table-secondary">
       <tr *ngFor="let element of listObj; let i = index">
-        <th>{{element.createdAt}}</th>
-        <th>{{element.workoutDetails}}</th>
-        <th>{{element.workoutContent}}</th>
+        <th style="width: 12%">{{element.createdAt}}</th>
+        <th style="width: 27%">{{element.workoutDetails}}</th>
+        <th style="width: 60%">{{element.workoutContent}}</th>
       </tr>
     </tbody>
   </table>
